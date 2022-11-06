@@ -23,14 +23,14 @@ const AuthLayout = (props: AuthLayoutProps) => {
 
       <div className="w-full flex flex-col justify-center items-center">
         <div className="mx-auto container w-10/12 w-md-full">
-          <h1 className="font-extrabold text-center text-3xl mb-10 pb-6">
+          <h1 className="font-extrabold text-center text-3xl mb-10 pb-2">
             {title}
           </h1>
 
-          {children}
+          <div className="flex flex-col-reverse md:flex-col">{children}</div>
 
           {/* bottom links */}
-          <div className="text-center mt-4">
+          <div className="text-center mt-6 md:mt-4">
             {linkDesc}
             <Link href={link}>
               <span className="pl-1 text-[#00EAFF] hover:text-[#00ccff] cursor-pointer">
