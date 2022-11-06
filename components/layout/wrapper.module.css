@@ -1,0 +1,6 @@
+.wrapper_outer_cont {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}

@@ -3,7 +3,7 @@ import AuthLayout from "../components/layout/AuthLayout";
 import SocialBtns from "../components/socialbtns/SocialBtns";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
+const Register = () => {
   // Hooks and vars
   const [password, setPassword] = useState(false);
 
@@ -15,10 +15,10 @@ const Login = () => {
   return (
     <AuthLayout
       pageName="login"
-      link="/register"
-      linkName="Sign up"
-      title="Login to Continue"
-      linkDesc="Don't have an account?"
+      link="/login"
+      linkName="Sign in"
+      title="Register to Continue"
+      linkDesc="Already have an account?"
     >
       <SocialBtns />
 
@@ -28,7 +28,7 @@ const Login = () => {
         <hr className="bg-red w-2/6 mt-1" />
       </div>
 
-      {/* login with email */}
+      {/* Register with email */}
       <form className="flex flex-col justify-center items-center mx-auto w-full sm:w-6/12 lg:w-4/12 xl:w-3/12">
         <input
           type="email"
@@ -51,11 +51,11 @@ const Login = () => {
         </div>
 
         <button className="hover:bg-[#00ccff] font-semibold w-full py-3 rounded-xl mt-3 bg-[#00EAFF] text-black">
-          Sign in
+          Sign up
         </button>
       </form>
     </AuthLayout>
   );
 };
 
-export default Login;
+export default Register;
