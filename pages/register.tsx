@@ -39,7 +39,7 @@ const Register = () => {
           <input
             placeholder="Password"
             type={password ? "password" : "text"}
-            className=" w-80 border-white px-3 py-2 text-black font-base invalid:red  outline-none"
+            className="w-80 bg-white border-white px-3 py-2 text-black font-base invalid:red  outline-none"
           />
           <span onClick={togglePass} className="cursor-pointer right-5 w-10">
             {!password ? (
