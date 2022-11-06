@@ -23,9 +23,9 @@ const AuthLayout = (props: AuthLayoutProps) => {
 
       <div className="w-full flex flex-col justify-center items-center">
         <div className="mx-auto container w-10/12 w-md-full">
-          <h2 className="font-extrabold text-center text-3xl mb-10 pb-2">
+          <h1 className="font-extrabold text-center md:text-3xl text-2xl mb-8 pb-2">
             {title}
-          </h2>
+          </h1>
 
           <div className="flex flex-col-reverse md:flex-col">{children}</div>
 
