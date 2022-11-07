@@ -3,12 +3,12 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="w-full text-center">
       <Head>
         <title>Homepage</title>
       </Head>
-      <div>HomePage</div>
-    </>
+      <div className="text-5xl">This is the HomePage</div>
+    </div>
   );
 };
 
