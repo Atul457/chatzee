@@ -14,10 +14,33 @@ const Header = () => {
           />
         </span>
 
-        <section className="links_sec pl-5 flex items-center text-[#00EAFF] cursor-pointer">
-          <span className="mr-3 text-lg font-semibold hover:text-[#00ccff]">Login</span>
-          <span className="text-lg font-semibold hover:text-[#00ccff]">Register</span>
+        <section className="links_sec pl-5  items-center text-slate-300 cursor-pointer hidden md:flex">
+          <span className="mr-3 text-lg font-semibold hover:text-[#00EAFF]">
+            Login
+          </span>
+          <span className="text-lg font-semibold hover:text-[#00EAFF]">
+            Register
+          </span>
         </section>
+
+        {/* toggler */}
+        <button className="toggler border-[#00EAFF] rounded-md border-2 py-1.5 px-2 cursor-pointer inline-block md:hidden">
+          <svg
+            className="w-5 h-5 text-[#00EAFF]"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+        {/* toggler */}
       </div>
     </header>
   );
