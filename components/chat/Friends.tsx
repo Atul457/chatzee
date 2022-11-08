@@ -19,7 +19,7 @@ const Friends = (props: IFriendProps) => {
   return (
     <div className={`${styles.friends}`}>
       {friends.map((friend, index) => {
-        return <Friend key={index} friend={friend} />;
+        return <Friend key={index} friend={{ ...friend, index }} />;
       })}
     </div>
   );

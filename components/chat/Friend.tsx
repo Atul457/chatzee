@@ -8,6 +8,7 @@ type IFriend = {
   new_messages_count: number;
   last_message: string;
   time: string;
+  index: number
 };
 
 const Friend = (props: { friend: IFriend }) => {

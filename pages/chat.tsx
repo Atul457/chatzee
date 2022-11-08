@@ -91,16 +91,19 @@ const Chat = () => {
 
   return (
     <div className="w-full flex flex-wrap">
-      <div className="md:w-1/4 2xl:w-1/6 w-full">
+      <aside className="md:w-2/6 2xl:w-1/6 w-full">
         <Friends friends={friends} />
-      </div>
-      <div className="w-3/4 px-5 h-[300px] hidden md:block">
+      </aside>
+      {/* opened chat section */}
+      <section className="md:w-4/6 2xl:w-5/6 px-5 h-[300px] hidden md:block">
         <div className="w-full flex h-full items-center justify-center">
           <h1 className="text-3xl">Chats</h1>
         </div>
-      </div>
+      </section>
+      {/* opened chat section */}
     </div>
   );
 };
+
 
 export default Chat;
