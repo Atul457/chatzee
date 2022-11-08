@@ -18,7 +18,9 @@ type IFriend = {
 const Friend = (props: { friend: IFriend }) => {
   const { friend } = props;
   return (
-    <div className="w-full border-white border-b-2 p-1 md:p-2 py-2 cursor-pointer mb-1 flex items-start justify-start">
+    <div
+      className={`w-full p-1 md:p-2 py-2 cursor-pointer mb-1 flex items-start justify-start ${styles.friend}`}
+    >
       <div className={styles.profile_img}>
         <Image
           src={friend?.profile_img}

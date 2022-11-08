@@ -19,6 +19,10 @@
   width: calc(100% - 50px);
 }
 
+.friend {
+  border-bottom: 1px solid #cccccc75;
+}
+
 @media (max-width: 768px) {
   .friends {
     padding-right: 0px;

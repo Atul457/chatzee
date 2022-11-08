@@ -1,11 +1,20 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import styles from "./header.module.css";
 
 const Header = () => {
+  // Hooks and vars
+  const [expandMenu, setExpandMenu] = useState(false);
+
+  // Functions
+  const toggleExpandMenu = () => {
+    setExpandMenu(!expandMenu);
+  };
+
   return (
-    <header className="w-full sticky top-0 bg-gray-900 px-1 w-100 py-4 md:py-5 z-[99]">
-      <div className="flex justify-between flex-wrap items-center">
-        <span>
+    <header className="w-full sticky top-0 bg-gray-900 md:px-1 w-100 py-4 md:py-5 z-[99]">
+      <div className="flex justify-between flex-wrap items-center relative">
+        <span className="mr-3">
           <Image
             src="/ChatZeeLogo.png"
             alt="Group 30"
@@ -24,7 +33,10 @@ const Header = () => {
         </section>
 
         {/* toggler */}
-        <button className="toggler border-[#00EAFF] rounded-md border-2 py-1.5 px-2 cursor-pointer inline-block md:hidden">
+        <button
+          className="toggler border-[#00EAFF] rounded-md border-2 py-1.5 px-2 cursor-pointer inline-block md:hidden"
+          onClick={toggleExpandMenu}
+        >
           <svg
             className="w-5 h-5 text-[#00EAFF]"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +53,21 @@ const Header = () => {
           </svg>
         </button>
         {/* toggler */}
+
+        {/* expandable menu */}
+        {expandMenu ? (
+          <div
+            className={`absolute top-[50px] py-3 bg-gray-900 w-full ${styles.expandable}`}
+          >
+            <div className="text-md font-semibold border-[#00EAFF] pb-3 text-[#00EAFF]">
+              Login
+            </div>
+            <div className="text-md font-semibold border-[#00EAFF] py-3 text-[#00EAFF]">
+              Register
+            </div>
+          </div>
+        ) : null}
+        {/* expandable menu */}
       </div>
     </header>
   );
