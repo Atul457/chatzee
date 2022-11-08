@@ -27,7 +27,6 @@ const Friend = (props: { friend: IFriend }) => {
   const name: string = getImage(friend.name);
   const color: string = randomColor();
   const bgColor: string = `${color}4D`;
-  console.log(bgColor);
 
   return (
     <div
