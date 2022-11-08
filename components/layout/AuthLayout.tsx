@@ -9,7 +9,7 @@ const AuthLayout = (props: IAuthLayoutProps) => {
   return (
     <>
       <Head>
-        <title>{pageName}</title>
+        <title>{pageName} - ChatZee</title>
       </Head>
 
       <div className="w-full flex flex-col justify-center items-center lg:mt-20 md:mt-4 mt-5">
