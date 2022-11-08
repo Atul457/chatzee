@@ -15,11 +15,13 @@ const Header = () => {
   return (
     <header className="w-full sticky top-0 bg-slate-900 md:px-1 w-100 py-4 md:py-5 z-[99]">
       <div className="flex justify-between flex-wrap items-center relative">
-        <span className="mr-3">
-          <span className="text-3xl md:text-3xl text-white font-bold">
-            ChatZee
+        <Link href="/chat">
+          <span className="mr-3">
+            <span className="text-3xl md:text-3xl text-white font-bold">
+              ChatZee
+            </span>
           </span>
-        </span>
+        </Link>
 
         <section className="links_sec pl-5  items-center text-white cursor-pointer hidden md:flex">
           <Link href="/login">
