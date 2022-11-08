@@ -8,8 +8,8 @@ const Header = () => {
   const [expandMenu, setExpandMenu] = useState(false);
 
   // Functions
-  const toggleExpandMenu = () => {
-    setExpandMenu(!expandMenu);
+  const toggleExpandMenu = (valueToSet?: boolean) => {
+    setExpandMenu(valueToSet ?? !expandMenu);
   };
 
   return (
@@ -37,7 +37,7 @@ const Header = () => {
         {/* toggler */}
         <button
           className="toggler border-white rounded-md border-2 py-1.5 px-2 cursor-pointer inline-block md:hidden"
-          onClick={toggleExpandMenu}
+          onClick={() => toggleExpandMenu()}
         >
           <svg
             className="w-5 h-5 text-white"
@@ -61,12 +61,20 @@ const Header = () => {
           <div
             className={`absolute top-[50px] py-3 bg-slate-900 w-full ${styles.expandable}`}
           >
-            <Link href="/login" className="block">
+            <Link
+              href="/login"
+              className="block"
+              onClick={() => toggleExpandMenu(false)}
+            >
               <div className="text-md font-semibold border-white pb-3 text-white">
                 Login
               </div>
             </Link>
-            <Link href="/register" className="block">
+            <Link
+              href="/register"
+              className="block"
+              onClick={() => toggleExpandMenu(false)}
+            >
               <div className="text-md font-semibold border-white py-3 text-white">
                 Register
               </div>
