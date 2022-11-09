@@ -24,7 +24,7 @@ const Chat = () => {
     <div className="w-full flex flex-wrap">
       {/* friends */}
       <aside
-        className={`w-full md:block min-w-[25%] md:w-[40%] lg:w-[30%] xl:w-[25%] ${
+        className={`w-full md:block text-center min-w-[25%] md:w-[40%] lg:w-[30%] xl:w-[25%] ${
           !noChatOpened ? "hidden" : ""
         }`}
       >
