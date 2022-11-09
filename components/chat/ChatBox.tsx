@@ -31,7 +31,7 @@ const ChatBox = () => {
     <>
       {!haveNoFriends ? (
         <div className="bg-slate-700 h-full w-full rounded-2xl relative overflow-hidden">
-          <header className="sticky top-0 w-full p-3 bg-blue-600 flex flex-wrap items-center text-white">
+          <header className="sticky top-0 w-full p-3 py-2 md:py-3 bg-blue-600 flex flex-wrap items-center text-white">
             <section className="flex items-center">
               <FaArrowLeft
                 className="mr-2 text-white cursor-pointer md:hidden"
