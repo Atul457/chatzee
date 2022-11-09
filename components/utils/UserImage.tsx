@@ -1,6 +1,7 @@
 import React from "react";
 import { getImage } from "../../helpers/helper";
 import { IProfileImage } from "../../helpers/types";
+import styles from "../../components/chat/chat.module.css";
 
 type IUserImageProps = {
   name: string;
@@ -20,10 +21,12 @@ const UserImage = (props: IUserImageProps) => {
 
   return (
     <div
-      className={`bg-white w-[${height}px] h-[${width}px] rounded-full overflow-hidden${` ${props?.className}` ?? ""}`}
+      className={`bg-white rounded-full h-[40px] w-[40px] overflow-hidden${
+        ` ${props?.className}` ?? ""
+      }`}
     >
       <div
-        className={`w-full h-full flex justify-center items-center`}
+        className={`w-full h-full flex justify-center items-center ${styles.profile_img}`}
         style={{
           background: bgColor,
         }}
