@@ -1,95 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Friends from "../components/chat/Friends";
+import friendsData from "../helpers/friends.json";
+import styles from "../components/chat/chat.module.css";
+import ChatBox from "../components/chat/ChatBox";
+import { IChatType, IChatBoxStoreType } from "../helpers/types";
+import { useDispatch, useSelector } from "react-redux";
+import { handleFriends, switchChat } from "../redux/slices/chatSlice";
 
 const Chat = () => {
-  const friends = [
-    {
-      name: "Atul Singh",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 0,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Anmol Singh",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 2,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Rutuja Singh",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 12,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "John Graham",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 0,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Sen Kingston",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 3,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Chris",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 2,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Ellie",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 0,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Casio",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 2,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Lucy oberoy",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 9,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    },
-    {
-      name: "Jessica paterson",
-      profile_img: "/icons/facebook.svg",
-      new_messages_count: 0,
-      last_message: "hey how are you",
-      time: "12:00 AM",
-    }
-  ];
+  // Hooks and vars
+  const dispatch = useDispatch();
+  const { friends, opened_chat } = useSelector<IChatBoxStoreType>(
+    (store) => store.chat
+  ) as IChatType;
+  const haveNoFriends: Boolean = friends.length === 0;
+  const noChatOpened: Boolean = Object.keys(opened_chat).length === 0;
+
+  useEffect(() => {
+    dispatch(handleFriends([...friendsData]));
+  }, []);
 
   return (
     <div className="w-full flex flex-wrap">
-      <aside className="md:w-2/6 2xl:w-1/6 w-full">
-        <Friends friends={friends} />
+      {/* friends */}
+      <aside
+        className={`w-full md:block min-w-[25%] md:w-[40%] lg:w-[30%] xl:w-[25%] ${
+          !noChatOpened ? "hidden" : ""
+        }`}
+      >
+        {haveNoFriends ? "No friends to show" : <Friends friends={friends} />}
       </aside>
+      {/* friends */}
       {/* opened chat section */}
-      <section className="md:w-4/6 2xl:w-5/6 px-5 h-[300px] hidden md:block">
+      <section
+        className={`md:block w-full px-0 md:w-[60%] lg:w-[70%] xl:w-[75%] md:px-5 h-[300px] ${
+          noChatOpened ? "hidden" : ""
+        } md:block ${styles.chat_section}`}
+      >
         <div className="w-full flex h-full items-center justify-center">
-          <h1 className="text-3xl">Chats</h1>
+          <ChatBox />
         </div>
       </section>
       {/* opened chat section */}
     </div>
   );
 };
-
 
 export default Chat;

@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Atul Singh",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 0,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Anmol Singh",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 2,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Rutuja Singh",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 12,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "John Graham",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 0,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Sen Kingston",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 3,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Chris",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 2,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Ellie",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 0,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Casio",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 2,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Lucy oberoy",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 9,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    },
+    {
+      "name": "Jessica paterson",
+      "profile_img": "/icons/facebook.svg",
+      "new_messages_count": 0,
+      "last_message": "hey how are you",
+      "time": "12:00 AM"
+    }
+  ]

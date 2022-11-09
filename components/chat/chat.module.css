@@ -19,13 +19,25 @@
   width: calc(100% - 50px);
 }
 
+.send_message_box {
+  width: calc(100% - 50px);
+}
+
 .friend {
   border-bottom: 1px solid #cccccc75;
+}
+
+.chat_section {
+  height: calc(100vh - 120px);
 }
 
 @media (max-width: 768px) {
   .friends {
     padding-right: 0px;
     max-height: unset;
+  }
+
+  .chat_section {
+    height: calc(100vh - 110px);
   }
 }
