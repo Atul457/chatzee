@@ -52,7 +52,7 @@ const ChatBox = () => {
             <input
               type="text"
               ref={sendMessageBoxRef}
-              className={`rounded-3xl py-2 px-3 outline-none text-black ${styles.send_message_box}`}
+              className={`rounded-3xl py-2 px-3 outline-none bg-white text-black ${styles.send_message_box}`}
               placeholder="Type a message"
             />
             <div className="flex items-center justify-center min-w-[40px]">
