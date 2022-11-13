@@ -18,7 +18,7 @@ const WrapperLayout = ({ children }: { children: React.ReactElement }) => {
         {" "}
         <ViewsLoader
           color="#0d8ffb"
-          className="flex justify-center w-full md:mt-40"
+          className="flex justify-center w-full"
           size="xl"
         />
       </div>
