@@ -4,12 +4,13 @@ import React from "react";
 import IAuthLayoutProps from "../../helpers/types";
 
 const AuthLayout = (props: IAuthLayoutProps) => {
+  // Hooks and vars
   const { children, pageName, link, linkName, title, linkDesc } = props;
-
+  const pageName_ = `${pageName} - ChatZee`;
   return (
     <>
       <Head>
-        <title>{pageName} - ChatZee</title>
+        <title>{pageName_}</title>
       </Head>
 
       <div className="w-full flex flex-col justify-center items-center lg:mt-20 md:mt-4 mt-5">

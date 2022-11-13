@@ -1,3 +1,18 @@
 .expandable > a > div {
   border-bottom: 1.5px solid #fff;
 }
+
+.expandable {
+  transition: all 0.2s ease-out;
+  box-shadow: 0 26px 27px -6px #00ffff42;
+  border-bottom: 4px solid cyan;
+}
+
+.collapsed {
+  height: 0px;
+  padding-top: 0px;
+  border-bottom: 0px;
+  box-shadow: none;
+  overflow: hidden;
+  padding-bottom: 0px;
+}

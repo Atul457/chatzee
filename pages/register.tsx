@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import AuthLayout from "../components/layout/AuthLayout";
 import SocialBtns from "../components/socialbtns/SocialBtns";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { unstable_getServerSession } from "next-auth";
+import { GetServerSidePropsContext } from "next";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 const Register = () => {
   // Hooks and vars
@@ -14,7 +17,7 @@ const Register = () => {
 
   return (
     <AuthLayout
-      pageName="login"
+      pageName="Register"
       link="/login"
       linkName="Sign in"
       title="Register to Continue"
@@ -57,5 +60,24 @@ const Register = () => {
     </AuthLayout>
   );
 };
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+
+  if (session)
+    return {
+      redirect: {
+        destination: "/chat",
+        permanent: false,
+      },
+    };
+  return {
+    props: {},
+  };
+}
 
 export default Register;

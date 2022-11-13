@@ -49,3 +49,56 @@ export type IChatBoxStoreType = {
 export type IFriendProps = {
   friends: IFriend[];
 };
+
+export type IUserCredentials = {
+  email: string;
+  password: string;
+};
+
+export type ILoginRes = {
+  status: boolean;
+  message: string;
+  body: {
+    profile: ILoggerInUserDetails;
+    token: string;
+  };
+};
+
+export type ILoggerInUserDetails = {
+  name: string;
+  email: string;
+  image: string;
+  user_id: string;
+};
+
+export type IStatus = {
+  loading: string;
+  idle: string;
+  fulfilled: string;
+  rejected: string;
+};
+
+export type IApiRes = {
+  status: "loading" | "idle" | "fulfilled" | "rejected";
+  message: string;
+};
+
+export interface defaultProps {
+  userDetails: ILoggerInUserDetails;
+}
+
+export interface IReusableCompProps {
+  color?: string;
+  className?: string | null;
+}
+
+export interface IViewLoaderProps extends IReusableCompProps {
+  bgColor?: string;
+  size?: "sm" | "lg" | "md" | "xsm" | "xl";
+  isPageLoader?: boolean;
+}
+
+export interface IMessageCompProps extends IReusableCompProps {
+  message: string;
+  isError: boolean;
+}

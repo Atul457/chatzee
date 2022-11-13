@@ -5,9 +5,10 @@ import styles from "../components/chat/chat.module.css";
 import ChatBox from "../components/chat/ChatBox";
 import { IChatType, IChatBoxStoreType } from "../helpers/types";
 import { useDispatch, useSelector } from "react-redux";
-import { handleFriends, switchChat } from "../redux/slices/chatSlice";
+import { handleFriends } from "../redux/slices/chatSlice";
+import { defaultProps } from "../helpers/types";
 
-const Chat = () => {
+const Chat = (props: defaultProps) => {
   // Hooks and vars
   const dispatch = useDispatch();
   const { friends, opened_chat } = useSelector<IChatBoxStoreType>(
@@ -22,18 +23,22 @@ const Chat = () => {
 
   return (
     <div className="w-full flex flex-wrap">
-      {/* friends */}
+      {/* Friends */}
       <aside
         className={`w-full md:block min-w-[25%] md:w-[40%] lg:w-[30%] xl:w-[25%] ${
           !noChatOpened ? "hidden" : ""
         }`}
       >
-        {haveNoFriends ? <div className="text-center">No friends to show</div> : <Friends friends={friends} />}
+        {haveNoFriends ? (
+          <div className="text-center">No friends to show</div>
+        ) : (
+          <Friends friends={friends} />
+        )}
       </aside>
-      {/* friends */}
+      {/* Friends */}
       {/* opened chat section */}
       <section
-        className={`md:block w-full px-0 md:w-[60%] lg:w-[70%] xl:w-[75%] md:px-5 h-[300px] ${
+        className={`md:block w-full px-0 md:w-[60%] lg:w-[70%] xl:w-[75%] md:pl-5 h-[300px] ${
           noChatOpened ? "hidden" : ""
         } md:block ${styles.chat_section}`}
       >
