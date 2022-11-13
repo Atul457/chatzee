@@ -102,3 +102,5 @@ export interface IMessageCompProps extends IReusableCompProps {
   message: string;
   isError: boolean;
 }
+
+export type IProgress = null | "start" | "done";
