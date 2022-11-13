@@ -7,6 +7,7 @@ import { IChatType, IChatBoxStoreType } from "../helpers/types";
 import { useDispatch, useSelector } from "react-redux";
 import { handleFriends } from "../redux/slices/chatSlice";
 import { defaultProps } from "../helpers/types";
+import Head from "next/head";
 
 const Chat = (props: defaultProps) => {
   // Hooks and vars
@@ -23,6 +24,10 @@ const Chat = (props: defaultProps) => {
 
   return (
     <div className="w-full flex flex-wrap">
+      <Head>
+        <title>Chat - ChatZee</title>
+      </Head>
+
       {/* Friends */}
       <aside
         className={`w-full md:block min-w-[25%] md:w-[40%] lg:w-[30%] xl:w-[25%] ${

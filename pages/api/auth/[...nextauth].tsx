@@ -2,6 +2,18 @@ import nextAuth from "next-auth";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { ILoginRes } from "../../../helpers/types";
+import GoogleProvider from "next-auth/providers/google";
+import { signIn } from "next-auth/react";
+
+type IGoogleProviderProps = {
+  clientId: string;
+  clientSecret: string;
+};
+
+const googleProviderProps = {
+  clientId: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+} as IGoogleProviderProps;
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -37,6 +49,9 @@ export const authOptions: NextAuthOptions = {
         return { id: user.user_id, ...user };
       },
     }),
+    GoogleProvider({
+      ...googleProviderProps,
+    }),
   ],
   pages: {
     signIn: "/login",
@@ -48,6 +63,9 @@ export const authOptions: NextAuthOptions = {
     session: async ({ session, token }) => {
       if (!token) return token;
       return { ...session, user: token };
+    },
+    signIn: async ({ user, profile, account }) => {
+      return true
     },
   },
 };

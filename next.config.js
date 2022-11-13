@@ -5,10 +5,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cloudart.com.au'
-      }
-    ]
+        protocol: "https",
+        hostname: "cloudart.com.au",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
   },
 };
 
